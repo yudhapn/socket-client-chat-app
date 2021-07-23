@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="chat"
+            type="id.ypran.chatapp.data.Chat" />
+
+        <variable
+            name="listener"
+            type="id.ypran.chatapp.presentation.ChatsAdapter.ChatsAdapterListener" />
+
+        <variable
+            name="user"
+            type="id.ypran.chatapp.data.User" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> listener.onChatClicked(chat)}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="16dp">
+
+            <ImageView
+                android:id="@+id/user_image_view"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/user_avatar"
+                android:src="@drawable/ic_baseline_person_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/username_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@{user.name}"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/user_image_view"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="John Borax" />
+
+            <TextView
+                android:id="@+id/last_message_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{chat.lastMessage.text}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/username_text_view"
+                app:layout_constraintTop_toBottomOf="@id/username_text_view"
+                tools:text="Hey how's going?" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

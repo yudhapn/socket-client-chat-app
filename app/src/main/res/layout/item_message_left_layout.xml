@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="message"
+            type="id.ypran.chatapp.data.Message" />
+
+        <variable
+            name="listener"
+            type="id.ypran.chatapp.presentation.MessagesAdapter.MessagesAdapterListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/user_image_view"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="@string/user_avatar"
+            android:src="@drawable/ic_baseline_person_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/message_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_message_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{() -> listener.onMessageLongClicked(message)}"
+            android:padding="8dp"
+            android:text="@{message.text}"
+            android:textSize="18sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/user_image_view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="apa kabar, kemaren gua abis pergi ke pantai pandawa bareng saddam. Asik banget deh!" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

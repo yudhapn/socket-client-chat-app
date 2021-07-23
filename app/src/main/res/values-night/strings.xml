@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_avatar">User Avatar</string>
+    <string name="user_active_circle_icon">User Active Circle Icon</string>
+</resources>
