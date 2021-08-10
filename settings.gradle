@@ -1,2 +1,4 @@
 include ':app'
 rootProject.name = "Chat App With Socket"
+include ':authentication'
+include ':core'

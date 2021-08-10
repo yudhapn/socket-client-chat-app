@@ -27,13 +27,28 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="id.ypran.chatapp.LoginFragment"
+        android:name="id.ypran.authentication.presentation.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        app:moduleName="authentication">
         <action
             android:id="@+id/action_to_chatListFragment"
             app:destination="@id/chatListFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_to_enableLoginBiometricFragment"
+            app:destination="@id/enableLoginBiometricFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/enableLoginBiometricFragment"
+        android:name="id.ypran.authentication.presentation.EnableBiometricLoginFragment"
+        android:label="enable_login_biometric_fragment"
+        app:moduleName="authentication">
+        <action
+            android:id="@+id/action_to_loginFragment"
+            app:destination="@id/loginFragment"
+            />
     </fragment>
 </navigation>

@@ -17,7 +17,6 @@ import id.ypran.chatapp.presentation.ChatsAdapter.ChatsAdapterListener
 import id.ypran.chatapp.presentation.UsersAdapter.UsersAdapterListener
 import io.socket.client.Socket
 import io.socket.emitter.Emitter
-import org.json.JSONObject
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.getKoin
 import org.koin.android.scope.AndroidScopeComponent
@@ -82,8 +81,8 @@ class ChatListFragment : Fragment(), ChatsAdapterListener, UsersAdapterListener,
         Log.d("ChatListFragment", "${it.size}")
         Log.d("ChatListFragment", "${it[0]}")
 //        val data = JSONObject(it[0].toString())
-        val userId: String
-        val name: String
+//        val userId: String
+//        val name: String
 //        try {
 //            userId = data.getString("userId")
 //            name = data.getString("name")
